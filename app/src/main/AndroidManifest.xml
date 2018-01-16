@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.softvilla.slmparentportal">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon"
+        android:name="com.orm.SugarApp">
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="sugar_example.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.softvilla.slmparentportal" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.topitideas.splashscreen.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenu"
+            android:label="Main Menu"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme"
+            >
+
+            <!--<meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.softvilla.slmparentportal.Children" />-->
+        </activity>
+
+        <service android:name=".FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Children"
+            android:label="Children List"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
+        <activity android:name=".Results"
+            android:label="Results"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme"
+            />
+        <activity
+            android:name=".Fee"
+            android:label="Fee"
+            android:theme="@style/CustomTheme"
+            android:screenOrientation="portrait"
+             />
+        <activity
+            android:name=".FeeDetail"
+            android:label="Fee Detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
+        <activity android:name=".Attendance"
+            android:label="Attendance"
+            />
+        <activity android:name=".Notes"
+            android:label="Notes"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" >
+
+        </activity>
+    </application>
+
+</manifest>
